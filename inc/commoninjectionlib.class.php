@@ -1388,6 +1388,7 @@ class PluginDatainjectionCommonInjectionLib
 
         if (version_compare($statecheckVersion, PLUGIN_DATAINJECTION_MIN_STATECHECK, 'ge')){
             $hookResult = Plugin::doOneHook('statecheck', 'plugin_pre_item_add_statecheck', $this->values);
+
             if(isset($hookResult['hookerror']) && $hookResult['hookerror']) {
                 $this->results['status']                     = self::FAILED;
                 $this->results[self::ACTION_CHECK]['status'] = self::FAILED;
